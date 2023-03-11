@@ -12,38 +12,20 @@ public class StackAndQueue {
             size++;
         }
     }
-    // Uc1 = push elements in stack.
-    public void pushElementInStack(Object data){   // creating push method in stack
+    // Uc3 = enque elements in Queue.
+    public void enqueElementsInQueue(Object data){   // creating enque method in queue
         Node newNode = new Node(data);
-        if(head == null){                          // check stack is empty or not
+        if(head == null){                          // check queue is empty or not
             head = newNode;
             return;
         }
         Node temp = head;                         // taking temporary variable temp
         while (temp.next != null){
-            temp = temp.next;                     // traverse till end of stack
+            temp = temp.next;                     // traverse till end of queue
         }
         temp.next = newNode;
     }
-    //uc2 = pop elements from the stack.
-    public void popElementsFromStack(){
-        if(head == null){
-            System.out.println("Stack is empty");
-            return;
-        }
-        if(head.next == null){                  // if stack  has only one element then this block will execute.
-            head = null;
-            return;
-        }
-        Node lasttemp = head.next;
-        Node secondLastTemp = head;
-        while (lasttemp.next != null) {
-            lasttemp = lasttemp.next;           // traverse till top of the stack
-            secondLastTemp = secondLastTemp.next;
-        }
-        secondLastTemp.next = null;            // delete the element
-    }
-    // display the stack elements.
+    // display the Queue elements.
     public void displayElements(){
         if(head == null){
             System.out.println("Linked list is empty");
@@ -59,12 +41,9 @@ public class StackAndQueue {
     }
     public static void main(String[] args) {
         StackAndQueue runner = new StackAndQueue();
-        runner.pushElementInStack(70);
-        runner.pushElementInStack(30);
-        runner.pushElementInStack(56);
-        runner.popElementsFromStack();
-        runner.popElementsFromStack();
-        runner.popElementsFromStack();
+        runner.enqueElementsInQueue(56);
+        runner.enqueElementsInQueue(30);
+        runner.enqueElementsInQueue(70);
         runner.displayElements();
     }
 }
