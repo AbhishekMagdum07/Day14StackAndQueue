@@ -25,6 +25,14 @@ public class StackAndQueue {
         }
         temp.next = newNode;
     }
+    // Uc4 = deque elements from queue.
+    public void dequeElementsFromQueue() {
+        if(head == null){
+            System.out.println("Linked list is empty");
+            return;
+        }
+        head = head.next;              // it will deque first element in the queue.
+    }
     // display the Queue elements.
     public void displayElements(){
         if(head == null){
@@ -44,6 +52,7 @@ public class StackAndQueue {
         runner.enqueElementsInQueue(56);
         runner.enqueElementsInQueue(30);
         runner.enqueElementsInQueue(70);
+        runner.dequeElementsFromQueue();
         runner.displayElements();
     }
 }
